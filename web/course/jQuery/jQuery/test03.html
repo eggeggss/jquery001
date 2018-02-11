@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		#all-tours ul li {
+			transition: all .5s;
+		}
+		#all-tours ul .now {
+			background: #000;
+			border: 1px solid #fff;
+			box-shadow: 0 0 10px #fff;
+			padding: 1em;
+		}
+	</style>
+</head>
+<body>
+	<div id="all-tours">
+	  <h1>Guided Tours</h1>
+	  <ul id="tours">
+	    <li class="usa tour on-sale" data-discount="299">
+	      <h2>New York, New York</h2>
+	      <span class="details">$1,899 for 7 nights</span>
+	      <button class="book">Book Now</button>
+	    </li>
+	    <li class="europe tour on-sale" data-discount="176">
+	      <h2>Paris, France</h2>
+	      <span class="details">$2,299 for 7 nights</span>
+	      <button class="book">Book Now</button>
+	    </li>
+	    <li class="asia tour featured" data-discount="349">
+	      <h2>Tokyo, Japan</h2>
+	      <span class="details">$3,799 for 7 nights</span>
+	      <span><button class="book">Book Now</button></span>
+	    </li>
+	  </ul>
+	  <ul id="filters">
+	    <li><button class="on-sale">On Sale</button></li>
+	    <li><button class="featured">Featured</button></li>
+	  </ul>
+	</div>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script>
+		$(function() {
+			// $('.book').click(function(event) {
+			// 	var msg = "<span>訂閱成功…</span>";
+			// 	$(this).after(msg).remove();
+			// });
+
+			$('.book').one('click', function(event) {
+				var parent = $(this).closest('.tour');
+				var discount = parent.data('discount');
+				var msg = '<span>訂閱成功… 節省 ' + discount + ' 元!</span>';
+				parent.append(msg);
+			});
+
+			$('#filters .on-sale').click(function(event) {
+				$('.now').removeClass('now');
+				$('#tours .on-sale').addClass('now');
+			});
+
+			$('#filters .featured').click(function(event) {
+				$('.now').removeClass('now');
+				$('#tours .featured').addClass('now');
+			});
+		});
+	</script>
+</body>
+</html>

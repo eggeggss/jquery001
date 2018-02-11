@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script>
+		$(function() {
+
+			var navList = {about: '關於我們', service: '服務項目', blog:'部落格', contact: '聯絡我們'}; //產生物件
+			var nav = $('<ul id="nav"></ul>'); //產生 nav
+
+			$.each(navList, function(name, val) { //透過 each 批次執行
+				var navItem = '<li><a href="' + name + '.html">' + val + ' <small>' + name + '</small></a></li>';//產生 li
+				nav.append(navItem); //添加到 nav 裡
+			});
+			
+			$('body').append(nav); //秀出 nav
+
+		});
+	</script>
+</body>
+</html>

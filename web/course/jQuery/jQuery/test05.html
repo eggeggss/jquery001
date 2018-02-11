@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="tour" data-daily-price="357">
+	  <h2>Paris, France Tour</h2>
+	  <p>$<span id="total">2,499</span> for <span id="nights-count">7</span> Nights</p>
+	  <p>
+	    <label for="nights">Number of Nights</label>
+	  </p>
+	  <p>
+	    <input type="number" id="nights" value="7">
+	  </p>
+	</div>	
+
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script>
+		$(function() {
+			// $('#nights').keyup(function(event) {
+			// 	var night = +$(this).val();
+			// 	var price = +$(this).closest('.tour').data('daily-price');
+			// 	var total = night * price;
+			// 	$('#nights-count').text(night);
+			// 	$('#total').text(total);
+			// });
+
+			$('#nights').keyup(countHandler);
+			$('#nights').change(countHandler);	
+
+			function countHandler() {
+				var night = +$(this).val();
+				var price = +$(this).closest('.tour').data('daily-price');
+				var total = night * price;
+				$('#nights-count').text(night);
+				$('#total').text(total);
+			}
+		});
+	</script>
+</body>
+</html>

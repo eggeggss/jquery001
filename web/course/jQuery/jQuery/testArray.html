@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script>
+		$(function() {
+			var arr = ["one", "two", "three", "four", "five" ]
+			var list = $('<ul id="list"></ul>');
+			// console.log(arr[2]);
+			$.each(arr, function(i, val) { 
+				var listItem = '<li>' + val + '</li>';
+				list.append(listItem);
+			});
+			$('body').append(list);
+		});
+	</script>
+</body>
+</html>

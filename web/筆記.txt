@@ -1,0 +1,30 @@
+package control
+
+ctrl+shift+p
+
+install package or install pcip
+=>emmet
+remove package
+
+
+!+tab
+
+$("#dest li")
+$("#dest >li") ¤U¼hli
+
+.qa-container>.qa*10>a+.qa-content>lorem
+.qa-container>.qa*10>a[href=#]{this is a title}+.qa-content>lorem100
+.qa-container>.qa*10>a.qa-title[href=#]{this is a title}+.qa-content>lorem100
+
+
+
+#container>#header+#nav
+#container>(#header>.logo)
+#=> id 
+.=> class
+
+script:src
+
+.slider>ul>li*4>img[src=http://placehold.it/800x300]
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="tour">
+	  <h2>Paris, France Tour</h2>
+	  <p>$2,499 for 7 Nights</p>
+	  <button class="more">See photos from our last tour</button>
+	  <ul class="photos">
+	    <li>
+	      <img src="img/paris1.jpg">
+	      <span>Arc de Triomphe</span>
+	    </li>
+	    <li>
+	      <img src="img/paris2.jpg">
+	      <span>The Eiffel Tower</span>
+	    </li>
+	    <li>
+	      <img src="img/paris3.jpg">
+	      <span>Notre Dame de Paris</span>
+	    </li>
+	  </ul>
+	</div>
+
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script>
+		$(function() {
+			$('.more').click(function(e) {
+				$('.photos').stop().slideToggle(500);
+				console.log(e);
+			});
+
+			// $('.photos li').mouseenter(function(event) {
+			// 	$(this).find('span').slideDown(500);
+			// });
+
+			// $('.photos li').mouseleave(function(event) {
+			// 	$(this).find('span').slideUp(500);
+			// });
+
+			// $('.photos li').hover(function() {
+			// 	$(this).find('span').slideDown(500);
+			// }, function() {
+			// 	$(this).find('span').slideUp(500);
+			// });
+
+			$('.photos li').hover(function() {
+				$(this).find('span').stop().slideToggle(500);
+			});
+		});
+	</script>
+</body>
+</html>
